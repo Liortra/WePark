@@ -73,8 +73,7 @@ class SettingsBloc extends Cubit<BaseSettingsState> {
   updateUser(String valueChoose) async {
     emit(LoadingSettingsState());
     try {
-      print(_userName);
-      final _newUser = UserEntity(_userEntity.userId, _userEntity.role, _userName, _userEntity.licensePlate);
+      var _newUser = new UserEntity(_userEntity.userId, _userEntity.role, _userName, _licensePlate);
       await _userRepository.updateUser(
           _userEntity.userId.domain, _userEntity.userId.email, _newUser);
       _localStorage.setInt(_userEntity.userId.email+_userName, int.parse(valueChoose));

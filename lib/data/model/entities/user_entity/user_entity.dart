@@ -11,7 +11,6 @@ class UserEntity {
   UserRole role;
   String username;
   String licensePlate;
-  // bool isParked;
 
   UserEntity(this.userId, this.role, this.username, this.licensePlate);
 

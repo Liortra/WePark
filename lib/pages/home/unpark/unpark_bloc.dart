@@ -78,7 +78,7 @@ class UnParkBloc extends Cubit<BaseUnParkState>{
       final element = await _actionRepository.loadCacheElement();
       final actionAttributes = Map<String, dynamic>();
       print("_diffTimeFunction show diff: ${diffTimePark.diffMin}");
-      actionAttributes["totalTimeInSystem"] = diffTimePark.diffMin;
+      actionAttributes["totalTimeInSystem"] = diffTimePark.diffMin.toDouble();
       await _actionRepository.markPark(ActionEntity.unPark(user,actionAttributes,element));
       _localStorage.remove(user.userId.email+user.licensePlate);
       _localStorage.remove(WeParkConsts.START);

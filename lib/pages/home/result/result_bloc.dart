@@ -44,7 +44,8 @@ class ResultBloc extends Cubit<BaseResultState> {
         return;
       }
       print("_diffTimeFunction show diff: ${_diffTimeFunction.diffMin}");
-      actionAttributes["averageWaitingTime_q"] = _diffTimeFunction.diffMin;
+      actionAttributes["averageWaitingTime_q"] = _diffTimeFunction.diffMin.toDouble();
+      // actionAttributes["averageWaitingTime_q"] = 5.0;
       await _actionRepository.markPark(ActionEntity.park(user,actionAttributes,element));
       _localStorage.setString(user.userId.email+user.licensePlate, json.encode(element));
       _localStorage.setBool(user.userId.email, true);
