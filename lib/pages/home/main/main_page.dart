@@ -121,10 +121,12 @@ class _MainPageState extends State<MainPage> {
   Widget _searchSection() {
     return Shadow(
       offset: Offset(10,10),
+      opacity: 0.7,
       child: Container(
           padding: EdgeInsets.all(10),
           child: InkWell(
-            onTap: () => _bloc.askLocationPermission(),
+            onTap: () =>
+                _bloc.askLocationPermission(),
             child: Image.asset("assets/images/p_icon.png",),
           ),
       ),

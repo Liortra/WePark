@@ -43,7 +43,8 @@ class LoginBloc extends Cubit<BaseLoginState> {
         case WeParkHttpError:
           print("SUCCESS GET WeParkHttpError");
           final error = e.error as WeParkHttpError;
-          message = error.message;
+          // message = error.message;
+          message = "Check again the email";
           break;
         default:
           print("FAILED GET WeParkHttpError");

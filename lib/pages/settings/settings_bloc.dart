@@ -84,7 +84,8 @@ class SettingsBloc extends Cubit<BaseSettingsState> {
         case WeParkHttpError:
           print("SUCCESS GET WeParkHttpError");
           final error = e.error as WeParkHttpError;
-          message = error.message;
+          // message = error.message;
+          message = "Something wrong, check again";
           break;
         default:
           print("FAILED GET WeParkHttpError");

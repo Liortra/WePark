@@ -56,7 +56,8 @@ class RegistrationBloc extends Cubit<BaseRegistrationState> {
         case WeParkHttpError:
           print("SUCCESS GET WeParkHttpError");
           final error = e.error as WeParkHttpError;
-          message = error.message;
+          // message = error.message;
+          message = "Check again, user is already exists";
           break;
         default:
           print("FAILED GET WeParkHttpError");
